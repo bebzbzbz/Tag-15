@@ -1,0 +1,146 @@
+@font-face {
+    font-family: "Karla";
+    src: url(../fonts/Karla-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "Karla Italic";
+    src: url(../fonts/Karla-Italic-VariableFont_wght.ttf);
+}
+
+:root {
+    --dark-grey: #323A45;
+    --dark: #000;
+    --light-grey: #848484;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Karla", Arial, Helvetica, sans-serif;
+    font-size: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--dark-grey);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+}
+
+/* ! CLASSES */
+
+.italic {
+    font-family: "Karla Italic"
+}
+
+.col-2 {
+    grid-column: span 2;
+}
+
+.col-3 {
+    grid-column: span 3;
+}
+
+
+/*! BODY STYLES */
+
+body {
+    padding: 0 4rem;
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 4rem 4rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        z-index: 10;
+
+        ul {
+            display: flex;
+
+            li a {
+                padding: 1.5rem;
+            }
+        }
+
+        .siteTitle {
+            font-size: 2rem;
+        }
+    }
+
+    main {
+        font-size: 1.5rem;
+
+        .grid-parent {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem 2rem;
+            margin-bottom: 4rem;
+
+            article {
+                & > p {
+                    color: var(--light-grey);
+                }
+
+                img {
+                    margin-bottom: 2rem;
+                    transition: opacity .3s ease;
+                }
+
+                .desc {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                &:hover img {
+                    opacity: .5;
+                }
+            }
+        }
+    }
+
+    footer {
+        padding-bottom: 4px;
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+
+            h1, h2 {
+                font-size: 1.3rem;
+                margin-bottom: 4rem;
+            }
+
+            span {
+                font-weight: bold;
+            }
+
+            &:first-of-type {
+                font-size: 1.2rem; 
+                margin-bottom: 4rem;
+            }
+
+            &:last-of-type {
+                color: var(--light-grey);
+            }
+        }
+    }
+}
